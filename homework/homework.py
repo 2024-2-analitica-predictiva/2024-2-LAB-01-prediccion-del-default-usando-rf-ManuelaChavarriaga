@@ -58,7 +58,6 @@ train_data = pd.read_csv(
 # - Elimine los registros con informacion no disponible.
 # - Para la columna EDUCATION, valores > 4 indican niveles superiores
 #   de educación, agrupe estos valores en la categoría "others".
-
 def clear_data(df):
     df=df.rename(columns={'default payment next month': 'default'})
     df=df.drop(columns=['ID'])
