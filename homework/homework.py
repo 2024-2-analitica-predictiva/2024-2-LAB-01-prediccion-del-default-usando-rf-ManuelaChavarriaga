@@ -142,12 +142,13 @@ model.fit(x_train, y_train)
 # Guarde el modelo como "files/models/model.pkl".
 import pickle
 import os
+import gzip
 
 models_dir = 'files/models'
 os.makedirs(models_dir, exist_ok=True)
 
-with open("files/models/model.pkl","wb") as file:
-    pickle.dump(model,file)
+with gzip.open("files/models/model.pkl.gz", "wb") as f:
+    pickle.dump(model, f)
 
 # Paso 6.
 # Calcule las metricas de precision, precision balanceada, recall,
